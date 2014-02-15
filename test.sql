@@ -55,6 +55,7 @@ CREATE TABLE `hist_trans` (
   `ktonr` varchar(5) NOT NULL,
   `type` varchar(4) DEFAULT NULL,
   `antall` decimal(10,2) DEFAULT NULL,
+  `behandlet` datetime NOT NULL,
   PRIMARY KEY (`ktonr`),
   UNIQUE KEY `ktonr_UNIQUE` (`ktonr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -111,6 +112,7 @@ CREATE TABLE `trans` (
   `ktonr` varchar(5) NOT NULL,
   `type` varchar(4) DEFAULT NULL,
   `antall` decimal(10,2) DEFAULT NULL,
+  `behandlet` datetime DEFAULT NULL,
   PRIMARY KEY (`ktonr`),
   UNIQUE KEY `ktonr_UNIQUE` (`ktonr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -122,8 +124,8 @@ CREATE TABLE `trans` (
 
 LOCK TABLES `trans` WRITE;
 /*!40000 ALTER TABLE `trans` DISABLE KEYS */;
-INSERT INTO `trans` VALUES ('1234','TEGN',333.50);
-INSERT INTO `trans` VALUES ('1235','TEGN',222.50);
+INSERT INTO `trans` VALUES ('1234','TEGN',333.50,NULL);
+INSERT INTO `trans` VALUES ('1235','TEGN',222.50,NULL);
 /*!40000 ALTER TABLE `trans` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-02-15  9:10:25
+-- Dump completed on 2014-02-15  9:53:18
